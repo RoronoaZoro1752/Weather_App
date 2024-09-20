@@ -18,7 +18,7 @@ function fetchWeather(cityName){
         return;
     }
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=5341210ab7034479ae1130201241809&q=${cityName}&days=6`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${Your-api-key}&q=${cityName}&days=6`)
         .then(response => response.json())
         .then(data => {
             UpdateUi(data);
@@ -90,7 +90,7 @@ loca_btn.addEventListener('click', () => {
         navigator.geolocation.getCurrentPosition(position => {
             const lat = position.coords.latitude;
             const long = position.coords.longitude;
-            fetch(`http://api.weatherapi.com/v1/forecast.json?key=5341210ab7034479ae1130201241809&q=${lat},${long}&days=6`)
+            fetch(`http://api.weatherapi.com/v1/forecast.json?key=${Your-api-key}&q=${lat},${long}&days=6`)
                 .then(response => response.json())
                 .then(data =>{
                     UpdateUi(data);
