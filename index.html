@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/cloud.png" type="image/x-icon">
+    <script src="./app.js" defer></script>
+    <title>Weather Web app</title>
+</head>
+<body >
+
+    <div class="min-h-screen bg-blue-50">
+        <!--Header-->
+        <div class="bg-blue-500 py-4">
+            <h1 class="text-center text-white text-3xl font-bold">Weather Broadcast App</h1>
+        </div>
+
+        <div class="my-4 items-center justify-start flex flex-col">
+            <label for="recent_dropdown" class="block text-gray-700 mb-2">Recently Searched Cities</label>
+            <select id="recent_dropdown" class="p-3 w-5/6 border border-gray-300 rounded mb-4 outline-none">
+                <option value="" selected disabled>Select a city...</option>
+            </select>
+        </div>
+        
+        <!--Main content-->
+        <div class="flex justify-center mt-8">
+            <div class="bg-blue-100 p-6 rounded-lg w-4/5 md:w-4/5 lg:w-2/3 shadow-lg">
+                <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+
+                    <!--Search section-->
+                    <div class="flex-1 bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold mb-4">Enter a city name</h2>
+                        <input type="text"
+                            placeholder="E.g New York, New Delhi.."
+                            class="w-full p-3 border border-gray-300 rounded mb-4 outline-none"
+                            id="inputcity"
+                        />
+                        <button class="w-full bg-blue-500 text-white p-3 rounded font-bold mb-4 hover:bg-blue-400 hover:shadow-lg transition-all duration-300" id="searchbtn">
+                            Search
+                        </button>
+                        <div class="flex items-center my-4">
+                            <div class="flex-grow border-t border-gray-400"></div>
+                            <span class="mx-4 text-gray-500">or</span>
+                            <div class="flex-grow border-t border-gray-400"></div>
+                        </div>
+                        <button class="w-full bg-gray-500 text-white p-3 rounded font-bold hover:bg-gray-400 hover:shadow-lg transition-all duration-300" id="location_btn">
+                            Use Current Location
+                        </button>
+                    </div>
+
+                    <!--Weather display section-->
+                    <div class="flex-1 bg-blue-200 p-6 rounded-lg shadow-md">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-700 lg:mb-16 md:mb-8 sm:mb-1" id="city">City Name</h3>
+                                <p class="mt-2 text-lg" id="temperature">Temperature: 0°C</p>
+                                <p class="mt-1" id="wind">Wind: 0 Mph</p>
+                                <p class="mt-1" id="humidity">Humidity: 0%</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="https://img.icons8.com/48/000000/cloud.png" alt="Weather Icon" id="image">
+                                <p class="text-sm mt-2 text-center" id="condition">Weather condition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5-Day Forecast-->
+                 <div class="mt-8">
+                    <h2 class="text-2xl font-bold">5-Day Forecast</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-4">
+                        <!--Forecast Card 1-->
+                        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
+                            <p class="font-bold text-gray-600" id="card_date_1">Date</p>
+                            <img src="https://img.icons8.com/color/48/000000/cloud.png" id="card_img_1" alt="Cloudy" />
+                            <p class="mt-2" id="card_temp_1">Temp: 0°C</p>
+                            <p id="card_wind_1">Wind: 0 Mph</p>
+                            <P id="card_humidity_1">Humidity: 0%</P>
+                        </div>
+
+                        <!-- Forecast Card 2 -->
+                        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
+                            <p class="font-bold text-gray-600" id="card_date_2">Date</p>
+                            <img src="https://img.icons8.com/color/48/000000/cloud.png" alt="Cloudy" id="card_img_2"/>
+                            <p class="mt-2" id="card_temp_2">Temp: 0°C</p>
+                            <p id="card_wind_2">Wind: 0 Mph</p>
+                            <p id="card_humidity_2">Humidity: 0%</p>
+                        </div>
+
+                        <!-- Forecast Card 3 -->
+                        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
+                            <p class="font-bold text-gray-600" id="card_date_3">Date</p>
+                            <img src="https://img.icons8.com/color/48/000000/cloud.png" alt="Cloudy" id="card_img_3"/>
+                            <p class="mt-2" id="card_temp_3">Temp: 0°C</p>
+                            <p id="card_wind_3">Wind: 0 Mph</p>
+                            <p id="card_humidity_3">Humidity: 0%</p>
+                        </div>
+
+                        <!-- Forecast Card 4 -->
+                        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
+                            <p class="font-bold text-gray-600" id="card_date_4">Date</p>
+                            <img src="https://img.icons8.com/color/48/000000/cloud.png" alt="Cloudy" id="card_img_4"/>
+                            <p class="mt-2" id="card_temp_4">Temp: 0°C</p>
+                            <p id="card_wind_4">Wind: 0 Mph</p>
+                            <p id="card_humidity_4">Humidity: 0%</p>
+                        </div>
+
+                        <!-- Forecast Card 5 -->
+                        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
+                            <p class="font-bold text-gray-600" id="card_date_5">Date</p>
+                            <img src="https://img.icons8.com/color/48/000000/cloud.png" alt="Cloud" id="card_img_5"/>
+                            <p class="mt-2" id="card_temp_5">Temp: 0°C</p>
+                            <p id="card_wind_5">Wind: 0 Mph</p>
+                            <p id="card_humidity_5">Humidity: 0%</p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
