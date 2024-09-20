@@ -21,7 +21,7 @@ To set up the project locally, follow these steps:
 
 1. I have used weather api for this project, for which the link is below.
 ```bash 
-http://api.weatherapi.com
+https://www.weatherapi.com/
 ```
 2. Login into the weather api website and generate the api key.
 
